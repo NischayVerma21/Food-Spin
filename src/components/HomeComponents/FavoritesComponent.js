@@ -12,7 +12,7 @@ const FavoritesComponent = () => {
   const fetchFavorites = async () => {
     try {
       const token = localStorage.getItem('foodspin-token');
-      const response = await fetch('http://localhost:5001/api/favorites', {
+      const response = await fetch('https://food-spin-backend.onrender.com/api/favorites', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -35,7 +35,7 @@ const FavoritesComponent = () => {
   const removeFavorite = async (favoriteId) => {
     try {
       const token = localStorage.getItem('foodspin-token');
-      const response = await fetch(`http://localhost:5001/api/favorites/${favoriteId}`, {
+      const response = await fetch(`https://food-spin-backend.onrender.com/api/favorites/${favoriteId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

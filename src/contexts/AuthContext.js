@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
-const API_BASE_URL = 'http://localhost:5001/api';
+const API_BASE_URL = 'https://food-spin-backend.onrender.com/api';
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
