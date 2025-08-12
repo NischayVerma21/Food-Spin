@@ -50,7 +50,7 @@ const WheelComponent = () => {
       }
 
       const currentDishes = dishes.length > 0 ? dishes : DEFAULT_DISHES;
-      const response = await fetch('http://localhost:5001/api/votes/session', {
+      const response = await fetch('https://food-spin-backend.onrender.com/api/votes/session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ const WheelComponent = () => {
           return;
         }
 
-        const response = await fetch(`http://localhost:5001/api/votes/session/${sessionId}`, {
+        const response = await fetch(`https://food-spin-backend.onrender.com/api/votes/session/${sessionId}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -345,7 +345,7 @@ const WheelComponent = () => {
         const token = localStorage.getItem('foodspin-token');
         if (!token) return;
 
-        const response = await fetch('http://localhost:5001/api/votes/session', {
+        const response = await fetch('https://food-spin-backend.onrender.com/api/votes/session', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -387,7 +387,7 @@ const WheelComponent = () => {
         const token = localStorage.getItem('foodspin-token');
         if (!token) return;
 
-        const response = await fetch(`http://localhost:5001/api/votes/add/${sessionId}/${encodeURIComponent(dishName)}`, {
+        const response = await fetch(`https://food-spin-backend.onrender.com/api/votes/add/${sessionId}/${encodeURIComponent(dishName)}`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -421,7 +421,7 @@ const WheelComponent = () => {
         const token = localStorage.getItem('foodspin-token');
         if (!token) return;
 
-        const response = await fetch(`http://localhost:5001/api/votes/remove/${sessionId}/${encodeURIComponent(dishName)}`, {
+        const response = await fetch(`https://food-spin-backend.onrender.com/api/votes/remove/${sessionId}/${encodeURIComponent(dishName)}`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -452,7 +452,7 @@ const WheelComponent = () => {
         const token = localStorage.getItem('foodspin-token');
         if (!token) return;
 
-        const response = await fetch('http://localhost:5001/api/votes/session', {
+        const response = await fetch('https://food-spin-backend.onrender.com/api/votes/session', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -531,7 +531,7 @@ const WheelComponent = () => {
       const token = localStorage.getItem('foodspin-token');
       if (!token || !selectedDish) return;
       
-      const response = await fetch('http://localhost:5001/api/wheel/history', {
+      const response = await fetch('https://food-spin-backend.onrender.com/api/wheel/history', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -616,7 +616,7 @@ const WheelComponent = () => {
       const token = localStorage.getItem('foodspin-token');
       if (!token) return;
 
-      const response = await fetch('http://localhost:5001/api/favorites', {
+      const response = await fetch('https://food-spin-backend.onrender.com/api/favorites', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -243,10 +243,10 @@ const CuisineSection = () => {
       }
 
       const [historyResponse, favoritesResponse] = await Promise.allSettled([
-        fetch('http://localhost:5001/api/wheel/history', {
+        fetch('https://food-spin-backend.onrender.com/api/wheel/history', {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch('http://localhost:5001/api/favorites', {
+        fetch('https://food-spin-backend.onrender.com/api/favorites', {
           headers: { 'Authorization': `Bearer ${token}` }
         })
       ]);
@@ -298,7 +298,7 @@ const CuisineSection = () => {
       // Try to get current session dishes if session exists
       if (currentSessionId) {
         try {
-          const sessionResponse = await fetch(`http://localhost:5001/api/votes/session/${currentSessionId}`, {
+          const sessionResponse = await fetch(`https://food-spin-backend.onrender.com/api/votes/session/${currentSessionId}`, {
             headers: { 'Authorization': `Bearer ${token}` }
           });
           
@@ -326,7 +326,7 @@ const CuisineSection = () => {
       // ✅ Create new session with the added dish
       const updatedDishes = [...currentDishes, { name: dishName, votes: 0 }];
       
-      const response = await fetch('http://localhost:5001/api/votes/session', {
+      const response = await fetch('https://food-spin-backend.onrender.com/api/votes/session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

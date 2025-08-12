@@ -13,7 +13,7 @@ const HistoryComponent = () => {
   const fetchHistory = async () => {
     try {
       const token = localStorage.getItem('foodspin-token');
-      const response = await fetch('http://localhost:5001/api/wheel/history', {
+      const response = await fetch('https://food-spin-backend.onrender.com/api/wheel/history', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
