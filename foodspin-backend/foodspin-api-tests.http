@@ -1,0 +1,52 @@
+### Variables
+@baseUrl = http://localhost:5000/api
+@contentType = application/json
+
+### 1. Health Check Test
+GET {{baseUrl}}/test
+
+### 2. Get All Foods
+GET {{baseUrl}}/foods
+
+### 3. Get Foods with Filter (Italian cuisine)
+GET {{baseUrl}}/foods?cuisine=italian
+
+### 4. Get Foods with Price Filter
+GET {{baseUrl}}/foods?priceRange=$$
+
+### 5. User Signup
+POST {{baseUrl}}/auth/signup
+Content-Type: {{contentType}}
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### 6. User Login
+POST {{baseUrl}}/auth/login
+Content-Type: {{contentType}}
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### 7. Verify Token (Replace TOKEN_HERE with actual token from login)
+GET {{baseUrl}}/auth/verify
+Authorization: Bearer TOKEN_HERE
+
+### 8. Spin Random Food (Requires authentication)
+GET {{baseUrl}}/foods/spin/random
+Authorization: Bearer TOKEN_HERE
+
+### 9. Get User Profile (Requires authentication)
+GET {{baseUrl}}/auth/profile
+Authorization: Bearer TOKEN_HERE
+
+### 10. Get Available Cuisines
+GET {{baseUrl}}/foods/meta/cuisines
+
+### 11. Get Price Ranges
+GET {{baseUrl}}/foods/meta/prices
